@@ -1,0 +1,153 @@
+
+//-----===== 6 #case-study ====-----//
+
+#case-study{
+  padding: 150px 0;
+  background: $gray;
+  max-width: 1920px;
+  margin: 0 auto;
+
+  .case-study__title{
+    @include mix-font($fz:36px,$fw:700,$lh:38px,$ff:'Source Sans Pro',$ls:100);
+    color: $gray3;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 20px 0;
+  }
+
+  .case-study__subtitle{
+    @include mix-font($fz:14px,$lh:18px);
+    color: $gray4;
+    text-align: center;
+  }
+
+  .case-study__line{
+    @include mix-line($col-line:#ccc);
+    margin: 30px auto 60px auto;
+  }
+
+  .case-study__block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .case-study__carousel{
+    flex: 0 0 auto;
+    width: fun-width-interest(665px,1170px);
+    margin: 0 -80px 0 0;
+    position: relative;
+    z-index: 99;
+  }
+
+  .owl-carousel{
+
+    .owl-dots{
+      position: absolute;
+      bottom: 7%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      .owl-dot{
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin: 0 7px;
+        background: $gray;
+      }
+
+      .active{
+        background: $orange;
+      }
+    }
+  }
+
+  .case-study__ideas{
+    background: $white;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    padding: 90px 15px 50px 15px;
+    text-align: center;
+
+    .ideas__icon{
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 60px auto;
+      background: $orange;
+      position: relative;
+      transform: rotate(45deg);
+    }
+
+    .ideas__img{
+      width: 41px;
+      height: 25px;
+      fill: $white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+
+    .ideas__title{
+      @include mix-font($fz:18px,$fw:600,$lh:20px,$ls:75);
+      color: $gray3;
+      text-transform: uppercase;
+      padding: 0 0 25px 0;
+      margin: 0 0 22px 0;
+      position: relative;
+
+      &::before{
+        content: '';
+        width: 35px;
+        height: 1px;
+        background: $gray5;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%,0);
+      }
+    }
+
+    .ideas__text{
+      @include mix-font($fz:14px,$fw:300,$lh:24px,$ff:'Source Sans Pro',$ls:75);
+      color: $gray4;
+      margin: 0 auto 35px auto;
+      width: fun-width-interest(545px,655px);
+    }
+
+    .ideas__button{
+      $value: $orange, 3px, 145px, $white, 12px, 14px, 10, 16px, darken, 10%;
+      @include mix-button($value...);
+      margin: 0 auto 50px auto;
+    }
+  }
+
+  .case-study__img{
+    flex: 0 0 fun-width-interest(585px,1170px);
+
+    img{
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 980px) {
+
+  #case-study{
+    padding: 75px 0;
+  }
+}
+
+@media (max-width: 768px) {
+
+  #case-study{
+
+    .case-study__carousel{
+      width:100%;
+      margin: 0;
+    }
+
+    .case-study__img{
+      display: none;
+    }
+  }
+}

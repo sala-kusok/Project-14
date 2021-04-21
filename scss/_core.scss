@@ -1,0 +1,53 @@
+@import "variables";
+@import "mixins";
+
+//-----===== Базовые настройки ====-----//
+
+body {
+  background: $background-body;
+  color: $color-body;
+  font-weight: $font-weight-body;
+  font-size: $font-size-body;
+  font-family: $font-family-body;
+  line-height: $line-height-body;
+}
+
+a{
+  color: $color-visited-link;
+
+  &:visited{
+    color: $color-visited-link;
+    text-decoration: underline;
+  }
+
+  &:hover{
+    color: $color-hover-link;
+    text-decoration:none;
+  }
+
+  &:focus, &:active{
+    color: $color-focus-active-link;
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-weight:normal;
+}
+
+img{
+  max-width:100%;
+}
+
+svg{
+  max-width:100%;
+  max-height:100%;
+}
+
+//-----===== Общие стили - начало ====-----//
+
+.wrapper{
+  @include mix-min-max($viewport-min, $viewport-max, 15px);
+}
+
+//-----===== Общие стили - конец ====-----//

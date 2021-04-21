@@ -1,0 +1,267 @@
+
+//-----===== 1 #first-screen ====-----//
+
+#first-screen{
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+
+  .first-screen__wrap{
+    background: url("../img/section-top-bg.jpg") center top/cover no-repeat;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 90%, 0 80%);
+
+    &::before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+    }
+  }
+
+  .first-screen__header{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: relative;
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header__logo{
+      flex: 0 0 auto;
+
+      img{
+        display: block;
+      }
+    }
+
+    .header__menu{
+      flex: 0 0 fun-width-interest(730px,1170px);
+    }
+
+    .header__list{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .header__item{
+
+    }
+
+    .header__link{
+      @include mix-font($fz:14px, $lh:16px);
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $gray;
+      transition: 0.2s color;
+
+      &:hover{
+        color: $orange;
+      }
+    }
+  }
+
+  .first-screen__slogan{
+    padding-top: 190px;
+    padding-bottom: 385px;
+    position: relative;
+    z-index: 99;
+    text-align: center;
+
+    .slogan__title{
+      @include mix-font($fz:24px, $ff:'Source Sans Pro', $lh:26px, $ls:50);
+      color: $gray;
+
+      span{
+        display: block;
+        margin-top: 38px;
+        font-weight: 700;
+        font-size: 72px;
+        line-height: 72px;
+        font-family: "Open Sans", sans-serif;
+        letter-spacing: fun-letter-spacing(100,72px);
+      }
+    }
+
+    .slogan__line{
+      @include mix-line();
+      margin: 48px auto;
+    }
+
+    .slogan__text{
+      width: fun-width-interest(600px,1170px);
+      margin: 0 auto 65px auto;
+      @include mix-font($fz:14px, $lh:24px);
+      color: $gray2;
+    }
+
+    .slogan__buttons{
+      display: flex;
+      justify-content: center;
+    }
+
+    .slogan__button{
+      $value: $orange, 3px, 226px, $white, 14px, 16px, 10, 19px, darken, 10%;
+      @include mix-button($value...){
+        font-weight: bold;
+        box-sizing: border-box;
+
+        &:first-child{
+          margin: 0 30px 0 0;
+        }
+      }
+
+      &--transparent{
+        background: transparent;
+        border: 1px solid $white;
+
+        &:hover{
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  .first-screen__icon{
+    position: absolute;
+    z-index: 99;
+    left: 50%;
+    top: 87%;
+    transform: translate(-50%,0);
+
+    a{
+      display: block;
+      position: relative;
+      width: 70px;
+      height: 70px;
+      box-sizing: border-box;
+      box-shadow: 0 0 0 5px rgba(255,255,255,0.3);
+      border-radius: 70px;
+      background: $gray;
+
+      &:hover{
+
+        .icon__img{
+          animation-name: rotate;
+          animation-duration: 2s;
+          animation-iteration-count: infinite;
+        }
+      }
+
+    }
+
+    .icon__img{
+      width: 30px;
+      height: 35px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      fill: $orange;
+    }
+  }
+
+}
+
+
+@media (max-width: 980px) {
+
+  #first-screen{
+
+    .first-screen__slogan{
+      padding-top: 100px;
+
+      .slogan__title{
+
+        span{
+          font-size: 50px;
+        }
+      }
+
+    }
+
+  }
+}
+
+@media (max-width: 768px) {
+
+  #first-screen{
+
+    .first-screen__header{
+      flex-wrap: wrap;
+
+      .header__logo{
+        flex: 0 0 100%;
+        margin: 0 0 35px 0;
+
+        img{
+          margin: 0 auto;
+        }
+      }
+
+      .header__menu{
+        flex: 0 0 100%;
+      }
+    }
+
+    .first-screen__slogan{
+      padding-bottom: 300px;
+
+      .slogan__text{
+        width: 80%;
+      }
+    }
+
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  #first-screen{
+
+    .first-screen__header{
+
+      .header__menu{
+        flex: 0 0 100%;
+      }
+
+      .header__list{
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .header__item{
+        margin: 0 10px 10px 10px;
+      }
+    }
+
+    .first-screen__slogan{
+      padding-top: 50px;
+
+      .slogan__text{
+        width: 95%;
+      }
+
+      .slogan__buttons{
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .slogan__button{
+
+        &:first-child{
+          margin: 0 0 25px 0;
+        }
+      }
+
+    }
+
+  }
+
+}
+
+
+

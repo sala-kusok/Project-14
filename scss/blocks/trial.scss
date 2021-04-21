@@ -1,0 +1,69 @@
+
+//-----===== 13 #trial ====-----//
+
+#trial{
+  background: url("../img/free-bg.jpg") center top/cover no-repeat;
+  position: relative;
+  padding: 140px 0;
+  max-width: 1920px;
+  margin: 0 auto;
+  user-select: none;
+
+  &::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.6);
+  }
+
+  .trial__wrapper{
+    position: relative;
+    z-index: 99;
+    text-align: center;
+    color: $white;
+  }
+
+  .trial__title{
+    @include mix-font($fz:36px,$lh:40px);
+    margin: 0 0 7px 0;
+  }
+
+  .trial__subtitle{
+    @include mix-font($fz:18px,$lh:30px);
+    margin: 0 0 65px 0;
+  }
+
+  .trial__link{
+    $value: $orange, 3px, 220px, $white, 14px, 16px, 10, 19px, darken, 10%;
+    @include mix-button($value...){
+      font-weight: bold;
+    };
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 980px) {
+
+  #trial{
+    padding: 70px 0;
+  }
+}
+
+@media (max-width: 480px) {
+
+  #trial{
+
+    .trial__title{
+      font-size: fun-px-tp-em(32px);
+    }
+
+    .trial__subtitle{
+      font-size: fun-px-tp-em(16px);
+      margin: 0 0 35px 0;
+    }
+  }
+}

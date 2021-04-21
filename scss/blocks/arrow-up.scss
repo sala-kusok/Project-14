@@ -1,0 +1,34 @@
+
+//-----===== 14 #arrow-up ====-----//
+
+#arrow-up{
+  width: 56px;
+  height: 56px;
+  background: $orange2;
+  border-radius: 50%;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  transition: 0.4s background;
+
+  &:hover{
+    background: darken($orange2,10%);
+  }
+
+  a{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .arrow-up__img{
+    width: 20px;
+    height: 20px;
+    fill: $white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+}

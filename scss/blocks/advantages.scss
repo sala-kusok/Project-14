@@ -1,0 +1,125 @@
+
+//-----===== 2 #advantages ====-----//
+
+#advantages{
+  padding-bottom: 110px;
+  border-bottom: 1px solid $gray-line;
+
+  .advantages__block{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .advantages__element{
+    flex: 0 0 fun-width-interest(260px,1170px);
+    text-align: center;
+
+    &:hover{
+      cursor: pointer;
+
+      .advantages__title{
+        color: $orange;
+      }
+
+      .advantages__icon{
+        transform: rotate(45deg);
+        border-color: $orange;
+
+        svg{
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .advantages__icon{
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 27px auto;
+    border: 1px solid $gray-line-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s transform, 0.5s border-color;
+
+    svg{
+      fill: $orange;
+      transition: 0.5s transform;
+    }
+
+    .advantages__img1{
+      width: 28px;
+      height: 12px;
+    }
+
+    .advantages__img2{
+      width: 22px;
+      height: 21px;
+    }
+
+    .advantages__img3{
+      width: 25px;
+      height: 30px;
+    }
+
+    .advantages__img4{
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .advantages__title{
+    @include mix-font($fz:18px,$fw:600, $lh:20px, $ls:75);
+    color: $gray3;
+    padding: 0 0 16px 0;
+    margin: 0 0 15px 0;
+    position: relative;
+    transition: 0.5s color;
+
+    &::before{
+      content: '';
+      width: 40px;
+      position: absolute;
+      height: 1px;
+      background: $gray3;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  .advantages__text{
+    @include mix-font($fz:12px, $lh:20px, $ls:75);
+    color: $gray4;
+  }
+}
+
+
+@media (max-width: 980px) {
+
+  #advantages{
+    padding-bottom: 55px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  #advantages{
+
+    .advantages__element{
+      flex: 0 0 48%;
+      margin: 0 0 25px 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+
+  #advantages{
+
+    .advantages__element{
+      flex: 0 0 100%;
+    }
+  }
+}

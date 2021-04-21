@@ -1,0 +1,203 @@
+
+//-----===== 12 #contact ====-----//
+
+#contact{
+  background: $gray;
+  padding: 150px 0;
+  max-width: 1920px;
+  margin: 0 auto;
+
+  .contact__title{
+    @include mix-font($fz:36px,$fw:700,$lh:38px,$ff:'Source Sans Pro');
+    @include mix-txt($ta:center,$tt:uppercase,$us:none);
+    color: $gray3;
+    margin: 0 0 20px 0;
+  }
+
+  .contact__subtitle{
+    @include mix-font($fz:14px,$lh:21px);
+    @include mix-txt($ta:center,$us:none);
+    color: $gray4;
+  }
+
+  .contact__line{
+    @include mix-line($col-line:#999);
+    margin: 23px auto 65px auto;
+  }
+
+  .contact__block{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .contact__address{
+    flex: 0 0 fun-width-interest(475px,1170px);
+    background: $white;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    padding: 100px 15px;
+    box-sizing: border-box;
+    font-style: normal;
+  }
+
+  .contact__item{
+    width: fun-width-interest(290px,475px);
+    margin: 0 auto;
+
+    &:last-child .contact__text{
+      margin-bottom: 0;
+    }
+  }
+
+  .contact__name{
+    display: inline-block;
+    @include mix-font($fz:24px,$fw:600,$lh:26px,$ff:'Source Sans Pro');
+    color: $orange2;
+    margin: 0 0 20px 0;
+  }
+
+  .contact__text{
+    @include mix-font($fz:18px,$lh:24px);
+    color: $gray4;
+    margin: 0 0 60px 0;
+  }
+
+  .contact__form{
+    flex: 0 0 fun-width-interest(655px,1170px);
+    background: $white;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    padding: 100px 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form{
+      width: fun-width-interest(475px,655px);
+    }
+
+    input{
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 10px 10px 0;
+      @include mix-font($fz:14px,$fw:600,$lh:16px);
+      font-family: "Open Sans", sans-serif;
+      border: 0;
+      outline: 0;
+
+      &:focus + label, &:valid + label{
+        top: -5px;
+      }
+    }
+
+    textarea{
+      width: 100%;
+      box-sizing: border-box;
+      @include mix-font($fz:14px,$fw:600,$lh:16px);
+      font-family: "Open Sans", sans-serif;
+      resize: none;
+      padding: 10px 10px 10px 0;
+      height: 100px;
+      border: 0;
+      outline: 0;
+
+      &:focus + label, &:valid + label{
+        top: -5px;
+      }
+    }
+
+    label{
+      width: 100%;
+      box-sizing: border-box;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      @include mix-font($fz:14px,$fw:600,$lh:18px);
+      color: $gray4;
+      transform: translateY(-50%);
+      pointer-events: none;
+      transition: 0.4s top;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .contact__input{
+    width: 100%;
+    margin: 0 0 30px 0;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+  }
+
+  .contact__textarea{
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+    margin: 0 0 30px 0;
+
+    label{
+      top: 19px;
+    }
+  }
+
+  .contact__button{
+
+    button{
+      $value: $orange, 2px, 150px, $white, 14px, 16px, 0, 15px, darken, 10%;
+      @include mix-button($value...){
+        font-weight: 700;
+        border: 0;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 980px) {
+
+  #contact{
+    padding: 75px 0;
+  }
+}
+
+@media (max-width: 768px) {
+
+  #contact{
+
+    .contact__address{
+      padding: 50px 15px;
+    }
+
+    .contact__item{
+      width: fun-width-interest(350px,475px);
+    }
+
+    .contact__form{
+      padding: 50px 15px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+
+  #contact{
+
+    .contact__address{
+      flex: 0 0 100%;
+      margin: 0 0 25px 0;
+    }
+
+    .contact__item{
+      width: fun-width-interest(400px,475px);
+    }
+
+    .contact__form{
+      flex: 0 0 100%;
+
+      form{
+        width: fun-width-interest(575px,655px);
+      }
+    }
+  }
+}

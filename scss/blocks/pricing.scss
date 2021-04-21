@@ -1,0 +1,158 @@
+
+//-----===== 8 #pricing ====-----//
+
+#pricing{
+  padding: 150px 0;
+
+  .pricing__title{
+    @include mix-font($fz:36px,$fw:700,$lh:38px,$ff:'Source Sans Pro',$ls:100);
+    color: $gray3;
+    margin: 0 0 17px 0;
+    text-align: center;
+  }
+
+  .pricing__subtitle{
+    @include mix-font($fz:14px,$lh:29px);
+    text-align: center;
+    color: $gray4;
+  }
+
+  .pricing__line{
+    @include mix-line($col-line:#ccc);
+    margin: 20px auto 60px auto;
+  }
+
+  .pricing__block{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .pricing__element{
+    flex: 0 0 fun-width-interest(380px,1170px);
+    background: $gray;
+
+    &--red{
+
+      .pricing__top{
+        background: $orange;
+      }
+
+      .pricing__price{
+
+        strong{
+          color: $orange;
+        }
+      }
+
+      .pricing__button{
+        background: $orange;
+      }
+    }
+  }
+
+  .pricing__top{
+    padding: 50px 0 130px 0;
+    text-align: center;
+    background: $gray4;
+  }
+
+  .pricing__name{
+    @include mix-font($fz:24px,$fw:600,$lh:26px,$ls:75);
+    color: $white;
+  }
+
+  .pricing__bottom{
+    padding: 0 0 45px 0;
+    text-align: center;
+  }
+
+  .pricing__block-price{
+    width: 150px;
+    height: 150px;
+    background: $white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px rgba(255,255,255,0.2);
+    position: relative;
+    margin: -75px auto 45px auto;
+  }
+
+  .pricing__price{
+    @include mix-font($fz:14px,$lh:20px,$ff:'Source Sans Pro');
+    color: $gray4;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    strong{
+      display: block;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 42px;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+  }
+
+  .pricing__list{
+    margin: 0 0 45px 0;
+    list-style: none;
+  }
+
+  .pricing__item{
+    margin: 0 0 25px 0;
+    @include mix-font($fz:14px,$lh:16px);
+    color: $gray4;
+  }
+
+  .pricing__button{
+    $value: $gray4, 3px, 140px, $white, 12px, 14px, 10, 17px;
+    @include mix-button($value...);
+    margin: 0 auto;
+
+    &:hover{
+      background: $orange;
+    }
+  }
+}
+
+@media (max-width: 980px) {
+
+  #pricing{
+    padding: 75px 0;
+  }
+}
+
+@media (max-width: 768px) {
+
+  #pricing{
+
+    .pricing__block{
+      justify-content: space-around;
+    }
+    .pricing__element{
+      flex: 0 0 45%;
+      margin: 0 0 25px 0;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+
+  #pricing{
+
+    .pricing__element{
+      flex: 0 0 90%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+
+  #pricing{
+
+    .pricing__element{
+      flex: 0 0 100%;
+    }
+  }
+}
